@@ -1,26 +1,29 @@
 package assignment9;
 
 import java.awt.Color;
-
 import edu.princeton.cs.introcs.StdDraw;
 
 public class Food {
 
 	public static final double FOOD_SIZE = 0.02;
 	private double x, y;
-	
-	/**
-	 * Creates a new Food at a random location
-	 */
+
 	public Food() {
-		//FIXME
+		// Set food at a random position within [0.05, 0.95] to stay in bounds
+		x = 0.05 + Math.random() * 0.9;
+		y = 0.05 + Math.random() * 0.9;
 	}
-	
-	/**
-	 * Draws the Food
-	 */
+
 	public void draw() {
-		//FIXME
+		StdDraw.setPenColor(Color.RED);
+		StdDraw.filledCircle(x, y, FOOD_SIZE);
 	}
-	
+
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
 }
